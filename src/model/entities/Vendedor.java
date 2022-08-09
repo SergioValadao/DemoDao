@@ -30,46 +30,70 @@ public class Vendedor implements Serializable {
 		this.departamento = departamento;
 	}
 
-
 	public Integer getId() {
 		return id;
 	}
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
 	public String getEmail() {
 		return email;
 	}
+
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+
 	public Date getAniversario() {
 		return aniversario;
 	}
+
 
 	public void setAniversario(Date aniversario) {
 		this.aniversario = aniversario;
 	}
 
+
 	public Double getSalarioBase() {
 		return SalarioBase;
 	}
 
+
 	public void setSalarioBase(Double salarioBase) {
 		SalarioBase = salarioBase;
 	}
+
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 	@Override
 	public int hashCode() {
