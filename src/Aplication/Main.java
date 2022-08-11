@@ -2,12 +2,14 @@ package Aplication;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TimeZone;
 
 import model.dao.DaoFactory;
+import model.dao.DepartamentoDao;
 import model.dao.VendedorDao;
 import model.entities.Departamento;
-import model.entities.Vendedor;
 
 public class Main {
 
@@ -19,6 +21,8 @@ public class Main {
 		TimeZone.setDefault(TimeZone.getTimeZone("US"));
 		
 		VendedorDao vendedorDao = DaoFactory.createVendedoDao();
+		DepartamentoDao departmentDao = DaoFactory.createDepartamentoDao();
+		List<Departamento> deplista = new ArrayList<>();
 		
 		//Fução procura por um vendedor
 		//Vendedor vendedor = vendedorDao.findById(2);
@@ -47,8 +51,28 @@ public class Main {
 		*/
 		
 		//excluir registro
-		vendedorDao.deleteById(20);
-
+		//vendedorDao.deleteById(9);
+		
+		//Procurar um Dartamento
+		
+		//Departamento depart = departmentDao.findById(5);		//book
+		//System.out.println(depart.toString());
+		
+		/*
+		deplista = departmentDao.findAll();
+		for(Departamento a: deplista) {
+			System.out.println(a.toString());
+		}
+		*/
+		//Excluir um registro
+		//departmentDao.deleteById(7);
+		
+		//Alterar um registro
+		obj.setId(4);
+		obj.setName("Desktops");
+		//departmentDao.update(obj);
+		
+		departmentDao.insert(obj);
 	}
 
 }

@@ -102,14 +102,16 @@ public class VendedorDaoJDBC implements VendedorDao {
 			pst.setInt(1, id);
 			
 			int rs = pst.executeUpdate();			
-			if (rs>0) {
-				System.out.println("Registro alterado com sucesso: " + id);																
+			if (rs > 0) {
+				System.out.println("Registro removido com sucesso: " + id);																
 			}else {
-				throw new DbException("Não foi possivel excluir registro agora! Tente outra vez.");
+				throw new DbException("Não foi possivel remover registro agora! Tente outra vez.");
 			}
 			
 		}catch(SQLException e) {
 			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeStatement(pst);
 		}
 		
 	}
